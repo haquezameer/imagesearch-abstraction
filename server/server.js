@@ -49,7 +49,7 @@ app.get('/api/imagesearch/:searchterm',(req,res) => {
 });
 
 app.get('/api/latest/imagesearch',(req,res) => {
-  searchTerm.find().sort({when : -1}).limit(10).then((docs) => {
+  searchTerm.find().sort({when : -1}).then((docs) => {
     res.send(docs);
   }).catch((e) => res.send(e));
 });
